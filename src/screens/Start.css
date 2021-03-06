@@ -1,0 +1,61 @@
+
+body > #root > div {
+  height: 100vh;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main_screen {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: inherit;
+}
+
+.main_screen > div {
+    width: 100%;
+    height: 100vh;
+}
+
+.main_screen > div:nth-child(2) {
+    background-color: #414354;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_screen > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 60px; */
+    background-image: url('../asset/images/alx_image.jpg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    /* background-color: #5e606c; */
+}
+
+.main_screen > div:nth-child(1) p, button {
+    position: relative;
+    top: 30px;
+}
+
+.main_screen > div:nth-child(1) p:nth-child(1) {
+    color: red;
+    width: 40%;
+    font-size: 28px;
+    word-wrap: break-word;
+    text-align: center;
+    font-weight: bolder;
+    line-height: 28px;
+}
+
+.main_screen > div:nth-child(1) button {
+    width: 180px;
+    height: 30px;
+    border: 0px solid white;
+    text-align: center;
+    background-color: #509DAE;
+    color: white;
+    border-radius: 5px 5px;
+}

@@ -1,0 +1,25 @@
+/* .floatingScreen {
+    border: 1px solid rgb(157, 154, 154);
+    position: fixed;
+    z-index: 1000;
+    width: 500px;
+    height: 75vh;
+    border-radius: 5px 5px;
+    right: 50px;
+    bottom: 75px;
+    background-color: rgba(255,255,255, 0.5);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    
+}
+
+
+.quickread {
+    display: flex;
+    flex-direction: column;
+}
+
+.floatingcoverdisplay {
+    width: inherit;
+    height: 250px;
+    border: 1px solid black;
+} */
