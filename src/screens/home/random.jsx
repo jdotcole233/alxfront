@@ -10,11 +10,12 @@ function Random() {
     })
     const [coverImage, setCoverImage] = useState("")
     const [kitsuData, setKitsuData] = useState({});
+    const [searchTerm , setSearchTerm] = useState("adventure");
 
     const [choice, setChoice] = useState("anime")
 
     useEffect(() => {
-        fetch(`https://kitsu.io/api/edge/${choice}?[categories]=adventure`, {
+        fetch(`https://kitsu.io/api/edge/${choice}?filter[categories]=${searchTerm}`, {
           Accept: "application/vnd.api+json",
           "Content-Type": "application/vnd.api+json",
         })
@@ -28,7 +29,7 @@ function Random() {
             console.log(kitsu);
           })
           .catch((error) => console.error(error));
-    }, [choice]);
+    }, [choice, searchTerm]);
 
     const open_link = (url) => {
         window.open(url);
@@ -39,7 +40,7 @@ function Random() {
     //        <img src={images[index]} />
     //    }
     // }
-    
+
 
     if (!kitsu.isLoading) return <p> Loading ...</p>
 
@@ -50,7 +51,7 @@ function Random() {
           <p className="p-2">Quick Read</p>
           {/* <img src={coverImage || ""} /> */}
         </div>
-        <div className="row">
+        <div className="flex justify-content-between row">
           <div className="form-group col-lg-4 p-2">
             <select
               className="form-control"
@@ -61,6 +62,10 @@ function Random() {
               <option value="manga">Manga</option>
             </select>
           </div>
+           <div className="col-lg-4 p-2 mr-2 form-group">
+               {/*<label htmlFor="search term">Search Category</label>*/}
+               <input type="text" onChange={(e) => setSearchTerm(e.target.value || "adventure")}  placeholder="Search Category"  className="form-control"/>
+           </div>
         </div>
         <div className="row">
           {kitsu.kitsu_data.map((anime) => (
@@ -99,7 +104,7 @@ function Random() {
                   {" "}
                   See More..{" "}
                 </Link>
-               
+
               </div>
             </div>
           ))}
